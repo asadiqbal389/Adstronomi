@@ -1,0 +1,11 @@
+.app {
+    background: url(/splash/splash-320x200.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;
+    left:50%;
+    top:50%;
+    height:50px; 
+    width:225px;
+    text-align:center;
+    padding:180px 0px 0px 0px;
+    margin:-115px 0px 0px -112px; 
+}

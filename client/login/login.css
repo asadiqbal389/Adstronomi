@@ -1,0 +1,39 @@
+.social-btn{
+	height: 135px;
+}
+.social-btn div a i{
+	color: #fff;
+}
+.social-btn div{
+	text-align: center;
+}
+.login-text{
+	margin: 0;
+	text-align: center;
+}
+.social-btn h1 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #bdb5aa;
+    margin: 0;
+    //padding-bottom: 8px;
+    //border-bottom: 1px solid #EBE6E2;
+    //text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+    //box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.social-btn h1 .log-in,
+.social-btn h1 .sign-up {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.social-btn h1 .log-in {
+    color: #6c6763;
+    padding-right: 2px;
+}
+
+.social-btn h1 .sign-up {
+    color: #ffb347;
+    padding-left: 2px;
+}

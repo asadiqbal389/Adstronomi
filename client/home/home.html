@@ -1,0 +1,246 @@
+<template name="header">
+  <header class="ads-header mdl-layout__header mdl-color--grey-100 mdl-color-text--white ads-header">
+        <div class="mdl-layout__header-row header-row">
+          <a href="/"><span class="mdl-layout-title">
+                <img src="/adslogonew.png"> <!-- <span>Adstronomi</span> -->
+          </span></a>
+          <div class="mdl-layout-spacer"></div>
+          
+       </div>
+      </header>
+</template>
+<template name="homemain">
+  <div class="ads-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      {{>header}}
+      <div class="ads-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="ads-drawer-header">
+	        {{#if currentUser }}
+	        	 {{>userInfo}}
+	        {{else}}
+        		 {{>loginbtnSoc}}	  
+	        {{/if}}
+        </header>
+        <nav class="ads-navigation mdl-navigation mdl-color--blue-grey-800">
+        {{#if currentUser }}
+          {{>uploadBtn}}
+        {{/if}}  
+          <a class="mdl-navigation__link" href="/"><i class="mdl-color-text--blue-grey-400 material-icons">home</i>Home</a>
+          <div class="mdl-layout-spacer"></div>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">help_outline</i></a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content mdl-color--grey-100 ads-main">
+        {{>yield}}
+        {{>yield "automobiles"}}
+        {{>yield "lifestyle"}}
+        {{>yield "food"}}
+        {{>yield "tech"}}
+        {{>yield "nsfw"}}
+      </main>
+    </div>
+</template>
+<template name="userInfo">
+  {{#if currentUser.services.google.id}}
+      <img src="{{currentUser.services.google.picture}}" class="ads-avatar" id="profUrl">
+  {{/if}}
+  {{#if currentUser.services.facebook.id}}
+      <img src="https://graph.facebook.com/v2.4/{{currentUser.services.facebook.id}}/picture" class="ads-avatar" id="profUrl">
+  {{/if}}   
+  <!-- <img {{profileUrl}}  class="ads-avatar" id="profUrl"> -->
+    <div class="ads-avatar-dropdown">
+      {{#if currentUser.services.google.id}}
+        <span>{{currentUser.services.google.name}}</span>
+      {{/if}}
+      {{#if currentUser.services.facebook.id}}
+          <span>{{currentUser.services.facebook.name}}</span>
+      {{/if}}
+      <div class="mdl-layout-spacer"></div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon logout">
+        <i class="fa fa-sign-out"></i>
+      </button>
+    </div>
+</template>
+<template name="loginbtnSoc">
+  <div class="demo-grid-ruler mdl-grid social-btn">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone login-text">
+      <h1><span class="sign-up">Login With</span></h1>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-phone">
+      <a href="#" class="log-twitter btn-facebook"><i class="fa fa-facebook-square fa-4x"></i></a>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-phone">
+      <a href="#" class="log-twitter btn-google"><i class="fa fa-google-plus-square fa-4x"></i></a>
+    </div>
+  </div>
+</template>
+<template name="uploadBtn">
+  <a class="mdl-navigation__link urlUpload"><i class="mdl-color-text--blue-grey-400 material-icons">file_upload</i>Upload</a>
+</template>
+<template name="catCards">
+  <div class="mdl-card on-the-road-again mdl-cell mdl-cell--11-col mdl-cell--4-col-phone ">
+    <div class="mdl-card__media">
+        {{> carousel}}
+      <!--h3><a href="entry.html">On the road again</a></h3-->
+    </div>
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+      <div class="minilogo"></div>
+      <div>
+        <strong>Recently Added</strong>
+        <!--span>2 days ago</span-->
+      </div>
+     <a href="/recently-added">
+        <button class="mdl-button mdl-js-button mdl-button--primary recent" style="float:right;font-size: 9px;">
+          View all
+        </button>
+      </a>
+    </div>
+  </div>
+</template>
+<template name="catAutoCards">
+  <div class="mdl-card on-the-road-again mdl-cell mdl-cell--11-col mdl-cell--4-col-phone ">
+    <div class="mdl-card__media">
+        {{> carouselauto}}
+      <!--h3><a href= "entry.html">On the road again</a></h3-->
+    </div>
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+      <div class="minilogo"></div>
+      <div>
+        <strong>Automobiles</strong>
+        <!--span>2 days ag o</span-->
+      </div>
+     <a href="/automobiles">
+        <button class="mdl-button mdl-js-button mdl-button--primary recent" style="float:right;font-size: 9px;">
+          View all
+        </button>
+      </a>
+    </div>
+  </div>
+</template>
+
+<template name="catLifeCards">
+  <div class="mdl-card on-the-road-again mdl-cell mdl-cell--11-col mdl-cell--4-col-phone ">
+    <div class="mdl-card__media">
+        {{> carousellife}}
+      <!--h3><a href= "entry.html">On the road again</a></h3-->
+    </div>
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+      <div class="minilogo"></div>
+      <div>
+        <strong>Lifestyle</strong>
+        <!--span>2 days ago</span-->
+      </div>
+     <a href="/lifestyle">
+        <button class="mdl-button mdl-js-button mdl-button--primary recent" style="float:right;font-size: 9px;">
+          View all
+        </button>
+      </a>
+    </div>
+  </div>
+</template>
+
+<template name="catFoodCards">
+  <div class="mdl-card on-the-road-again mdl-cell mdl-cell--11-col mdl-cell--4-col-phone ">
+    <div class="mdl-card__media">
+        {{> carouselfood}}
+      <!--h3><a href= "entry.html">On the road again</a></h3-->
+    </div>
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+      <div class="minilogo"></div>
+      <div>
+        <strong>Food</strong>
+        <!--span>2 days ag o</span-->
+      </div>
+     <a href="/food">
+        <button class="mdl-button mdl-js-button mdl-button--primary recent" style="float:right;font-size: 9px;">
+          View all
+        </button>
+      </a>
+    </div>
+  </div>
+</template>
+
+<template name="catTechCards">
+  <div class="mdl-card on-the-road-again mdl-cell mdl-cell--11-col mdl-cell--4-col-phone ">
+    <div class="mdl-card__media">
+        {{> carouseltech}}
+      <!--h3><a href= "entry.html">On the road again</a></h3-->
+    </div>
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+      <div class="minilogo"></div>
+      <div>
+        <strong>Technical</strong>
+        <!--span>2 days ago</span-->
+      </div>
+     <a href="/tech">
+        <button class="mdl-button mdl-js-button mdl-button--primary recent" style="float:right;font-size: 9px;">
+          View all
+        </button>
+      </a>
+    </div>
+  </div>
+</template>
+
+<template name="catNsfwCards">
+  <div class="mdl-card on-the-road-again mdl-cell mdl-cell--11-col mdl-cell--4-col-phone ">
+    <div class="mdl-card__media">
+        {{> carouselnsfw}}
+      <!--h3><a href= "entry.html">On the road again</a></h3-->
+    </div>
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+      <div class="minilogo"></div>
+      <div>
+        <strong>NSFW(Not Safe For Work)</strong>
+        <!--span>2 days ago</span-->
+      </div>
+     <a href="/nsfw">
+        <button class="mdl-button mdl-js-button mdl-button--primary recent" style="float:right;font-size: 9px;">
+          View all
+        </button>
+      </a>
+    </div>
+  </div>
+</template>
+<template name="carousel">
+       <div id="carousel" class="carouselCat">  
+            {{#each getYouIds}}
+                  <div><img src="{{imgthb}}" /></div>
+            {{/each}}
+       </div>     
+</template>
+<template name="carouselauto">
+       <div id="carouselauto" class="carouselCat">  
+            {{#each getYouAutoIds}}
+                  <div><img src="{{imgautothb}}" /></div>
+            {{/each}}
+       </div>     
+</template>
+<template name="carousellife">
+       <div id="carousellife" class="carouselCat">  
+            {{#each getYouLifeIds}}
+                  <div><img src="{{imglifethb}}" /></div>
+            {{/each}}
+       </div>     
+</template>
+<template name="carouselfood">
+       <div id="carouselfood" class="carouselCat">  
+            {{#each getYouFoodIds}}
+                  <div><img src="{{imgfoodthb}}" /></div>
+            {{/each}}
+       </div>     
+</template>
+
+<template name="carouseltech">
+       <div id="carouseltech" class="carouselCat">  
+            {{#each getYouTechIds}}
+                  <div><img src="{{imgtechthb}}" /></div>
+            {{/each}}
+       </div>     
+</template>
+
+<template name="carouselnsfw">
+       <div id="carouselnsfw" class="carouselCat">  
+            {{#each getYouNsfwIds}}
+                  <div><img src="{{imgnsfwthb}}" /></div>
+            {{/each}}
+       </div>     
+</template>

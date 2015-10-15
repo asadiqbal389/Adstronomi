@@ -1,0 +1,58 @@
+<template name="uploadModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <header class="ads-header mdl-layout__header mdl-color--grey-100 mdl-color-text--white ads-header">
+                    <div class="mdl-layout__header-row" style="padding-left:14px;">
+                      <span class="mdl-layout-title">
+                        <img src="/adslogo.png" class="ads-logo"> Adstronomy
+                      </span>
+                      <div class="mdl-layout-spacer"></div>
+                   </div>
+                  </header>
+                </div>
+
+                <div class="modal-body">
+                    <section class="content bgcolor-1">
+                    <h5 class="erroUrl"></h5>
+                    <span class="input input--fumi">
+                      <input class="input__field input__field--fumi" type="text" id="videoUrl" />
+                      <label class="input__label input__label--fumi" for="input-23">
+                        <i class="fa fa-youtube-square icon icon--fumi"></i>
+                        <span class="input__label-content input__label-content--fumi">Url</span>
+                      </label>
+                    </span>
+                    <span class="input input--fumi">
+                      <input class="input__field input__field--fumi" type="text" id="videoDes" />
+                      <label class="input__label input__label--fumi" for="input-23">
+                        <i class="fa fa-info icon icon--fumi"></i>
+                        <span class="input__label-content input__label-content--fumi">Description</span>
+                      </label>
+                    </span>
+                    <section class="cat-select">
+                      <select class="cs-select cs-skin-slide" id="videoCat">
+                        <option value="">Select Category</option>                       
+                        <option value="lifestyle">Lifestyle</option>
+                        <option value="food">Food</option>
+                        <option value="tech" >Tech</option>
+                        <option value="automobile" >Automobile</option>
+                        <option value="nsfw">NSFW(Not Safe For Work)</option>
+                        <option value="itsdiff">It's different</option>
+                      </select>
+                    </section>
+                    <div class="box bg-1">
+                      <button class="button button--wayra button--border-thick button--text-upper button--size-s urlSubmit" >Submit</button>
+                    </div>
+                  </section>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

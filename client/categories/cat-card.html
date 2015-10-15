@@ -1,0 +1,114 @@
+<template name="cardcatsingle">
+	{{#each getCatList}}
+		<a href="/watch/{{ids}}" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp catList" >
+		      <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-color-text--white" style="background-image:url('{{imgthbList}}')">
+		           <i class="material-icons">play_circle_filled</i>
+		      </header>
+		      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone single-card">
+			      <div class="mdl-card__supporting-text">
+			            <h4>{{title}}</h4>
+			            <div class="mdl-card__actions">
+				            <span>Duration : {{duration}}</span>
+				            <span>Views : {{views}}</span>
+			            </div>
+			      </div>
+			      
+		      </div>
+		</a>
+	{{/each}}	
+</template>
+
+<template name="cardcatauto">
+	{{#each getCatAutoList}}
+		<a href="/watch/{{idsauto}}" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp catList" >
+		      <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-color-text--white" style="background-image:url('{{imgthbListauto}}')">
+		           <i class="material-icons">play_circle_filled</i>
+		      </header>
+		      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone single-card">
+			      <div class="mdl-card__supporting-text">
+			            <h4>{{titleauto}}</h4>
+			            <div class="mdl-card__actions">
+				            <span>Duration : {{durationauto}}</span>
+				            <span>Views : {{viewsauto}}</span>
+			            </div>
+			      </div>
+			</div>
+		</a>
+	{{/each}}	
+</template>
+
+<template name="cardcatlife">
+	{{#each getCatLifeList}}
+		<a href="/watch/{{idslife}}" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp catList" >
+		      <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-color-text--white" style="background-image:url('{{imgthbListlife}}')">
+		           <i class="material-icons">play_circle_filled</i>
+		      </header>
+		      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone single-card">
+			      <div class="mdl-card__supporting-text">
+			            <h4>{{titlelife}}</h4>
+			            <div class="mdl-card__actions">
+				            <span>Duration : {{durationlife}}</span>
+				            <span>Views : {{viewslife}}</span>
+			            </div>
+			      </div>
+			</div>
+		</a>
+	{{/each}}	
+</template>
+
+<template name="cardcatfood">
+	{{#each getCatFoodList}}
+		<a href="/watch/{{idsfood}}" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp catList" >
+		      <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-color-text--white" style="background-image:url('{{imgthbListfood}}')">
+		           <i class="material-icons">play_circle_filled</i>
+		      </header>
+		      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone single-card">
+			      <div class="mdl-card__supporting-text">
+			            <h4>{{titlefood}}</h4>
+			            <div class="mdl-card__actions">
+				            <span>Duration : {{durationfood}}</span>
+				            <span>Views : {{viewsfood}}</span>
+			            </div>
+			      </div>
+			</div>
+		</a>
+	{{/each}}	
+</template>
+
+<template name="cardcattech">
+	{{#each getCatTechList}}
+		<a href="/watch/{{idstech}}" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp catList" >
+		      <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-color-text--white" style="background-image:url('{{imgthbListtech}}')">
+		           <i class="material-icons">play_circle_filled</i>
+		      </header>
+		      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone single-card">
+			      <div class="mdl-card__supporting-text">
+			            <h4>{{titletech}}</h4>
+				            <div class="mdl-card__actions">
+					            <span>Duration : {{durationtech}}</span>
+					            <span>Views : {{viewstech}}</span>
+				            </div>
+			      </div>
+			</div>
+		</a>
+	{{/each}}	
+</template>
+
+<template name="cardcatnsfw">
+	{{#each getCatNsfwList}}
+		<a href="/watch/{{idsnsfw}}" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp catList" >
+		      <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-color-text--white" style="background-image:url('{{imgthbListnsfw}}')">
+		           <i class="material-icons">play_circle_filled</i>
+		      </header>
+		      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone single-card">
+			      <div class="mdl-card__supporting-text">
+			            <h4>{{titlensfw}}</h4>
+			            <div class="mdl-card__actions">
+				            <span>Duration : {{durationnsfw}}</span>
+				            <span>Views : {{viewsnsfw}}</span>
+			            </div>
+			      </div>
+			</div>
+		</a>
+	{{/each}}	
+</template>
